@@ -1,4 +1,8 @@
 [[eshadoop-6.5.2]]
 == Elasticsearch for Apache Hadoop version 6.5.2
+<<<<<<< HEAD
+=======
+December 5, 2018
+>>>>>>> 0433379ff906551bc3dd7e839d3547d06459c92c
 
 ES-Hadoop 6.5.2 is a version compatibility release, tested specifically against Elasticsearch 6.5.2.

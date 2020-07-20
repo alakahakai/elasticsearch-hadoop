@@ -6,6 +6,8 @@ description = "Elasticsearch Hadoop Map/Reduce"
 dependencies {
     provided(project.ext.hadoopClient)
     provided("org.codehaus.jackson:jackson-mapper-asl:${project.ext.jacksonVersion}")
+    compile("commons-httpclient:commons-httpclient:3.0.1")
+    compile("commons-lang:commons-lang:2.6")
     testCompile "io.netty:netty-all:4.0.29.Final"
     testCompile "org.elasticsearch:securemock:1.2"
 }
@@ -15,6 +17,19 @@ String generatedResources = "$buildDir/generated-resources/main"
 sourceSets {
     main {
         output.dir(generatedResources, builtBy: "generateGitHash")
+    }
+}
+
+uploadArchives {
+    repositories {
+        ivy {
+            url "${System.properties['user.home']}/.ivy2/local"
+            layout 'pattern', {
+                artifact "elasticsearch-hadoop/[module]/[revision]/jars/[artifact](-[classifier])(.[ext])"
+                //ivy "elasticsearch-hadoop/[module]/[revision]/[artifact](-[classifier])-[revision](.[ext])"
+                ivy "elasticsearch-hadoop/[module]/[revision]/ivys/ivy.xml"
+             }
+         }
     }
 }
 

@@ -1,5 +1,9 @@
 [[eshadoop-6.4.3]]
 == Elasticsearch for Apache Hadoop version 6.4.3
+<<<<<<< HEAD
+=======
+November 6, 2018
+>>>>>>> 0433379ff906551bc3dd7e839d3547d06459c92c
 
 [[bugs-6.4.3]]
 === Bug Fixes

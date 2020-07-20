@@ -53,6 +53,10 @@ public class TestUtils {
         return new RestClient(new TestSettings()).mainInfo();
     }
 
+    public static EsMajorVersion getEsVersion() {
+        return new RestClient(new TestSettings()).remoteEsVersion();
+    }
+
     public static boolean isWindows() {
         return System.getProperty("os.name").toLowerCase(Locale.ROOT).startsWith("win");
     }
